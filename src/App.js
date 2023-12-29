@@ -14,19 +14,16 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 
 function App() {
-   const[alert]=useState({
-        msg:"This is amazing react course",
-        type:"primary"
-       })
-  //  const showAlert=(message,type)=>{
-  //   setAlert({
-  //     msg:message,
-  //     type:type
-  //    })
-  //    setTimeout(()=>{
-  //     setAlert(null)
-  //   },1500)
-  //  }
+   const[alert,setAlert]=useState(null)
+   const showAlert=(message,type)=>{
+    setAlert({
+      msg:message,
+      type:type
+     })
+     setTimeout(()=>{
+      setAlert(null)
+    },1500)
+   }
   //  props.showAlert("converted text to uppercase","success")
   return (
    <>
@@ -36,13 +33,13 @@ function App() {
    <Alert alert={alert}/>
    <div className="container">
    <Routes>
-          <Route exact path="/" element={<Home />}>
+          <Route exact path="/" element={<Home showAlert={showAlert}/>}>
           </Route>
           <Route exact path="/about"element={<About/>}>
             </Route>
-            <Route exact path="/signup"element={<Signup/>}>
+            <Route exact path="/signup"element={<Signup showAlert={showAlert}/>}>
             </Route>
-            <Route exact path="/login"element={<Login/>}>
+            <Route exact path="/login"element={<Login showAlert={showAlert}/>}>
             </Route>
     </Routes>
     </div>
