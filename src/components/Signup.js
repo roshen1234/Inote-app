@@ -18,7 +18,7 @@ const Signup = (props) => {
     console.log(json)
     if(json.success)
     {
-      // localStorage.setItem("token",json.authtoken)
+      localStorage.setItem('token',json.authToken)
       console.log(json.authtoken)
       navigate("/login")
       props.showAlert("Account created Successfull","success")
@@ -33,7 +33,8 @@ const Signup = (props) => {
     }
 
   return (
-    <div>
+    <div className='mt-3'>
+      <h2>Create an account to use inotebook</h2>
       <form onSubmit={handleSubmit}>
       <div className="mb-3 my-3">
     <label htmlFor="name" className="form-label">Name</label>
