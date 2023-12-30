@@ -12,7 +12,7 @@ const notesInitial=[]
 const getNotes= async()=>{
   // api calls
   // https://localhost:5000/api/notes/fetchallnotes it should come like this but we have to mention https://localhost:5000 in package.json as proxy then it will append https://localhost:5000 by itself behind /api
-  const response = await fetch(`http://localhost:5000/api/notes/fetchallnotes`, {
+  const response = await fetch(`/api/notes/fetchallnotes`, {
    method: "GET", 
    headers: {
      "Content-Type": "application/json",
@@ -30,7 +30,7 @@ const getNotes= async()=>{
 // add a note 
 const addNote= async(title,description,tag)=>{
    // api calls
-   const response = await fetch(`http://localhost:5000/api/notes/addnotes`, {
+   const response = await fetch(`/api/notes/addnotes`, {
     method: "POST", 
     headers: {
       "Content-Type": "application/json",
@@ -45,7 +45,7 @@ const addNote= async(title,description,tag)=>{
 // delete a node
 const deleteNote=async (id)=>{
   // api calls
-  const response = await fetch(`http://localhost:5000/api/notes/deletenote/${id}`, {
+  const response = await fetch(`/api/notes/deletenote/${id}`, {
     method: "DELETE", 
     headers: {
       "Content-Type": "application/json",
@@ -63,7 +63,7 @@ const deleteNote=async (id)=>{
 //edit a node
 const editNote=async (id,description,title,tag)=>{
   // api calls
-  const response = await fetch(`http://localhost:5000/api/notes/updatenote/${id}`, {
+  const response = await fetch(`/api/notes/updatenote/${id}`, {
     method: "PUT", 
     headers: {
       "Content-Type": "application/json",

@@ -68,7 +68,7 @@ res.json({note})
         res.status(500).send("some error occured")
 }
 })
-module.exports=router
+
 
 // route 3: delete a existing node using delete "api/notes/deletenote"
 
@@ -90,3 +90,5 @@ router.delete('/deletenote/:id',fetchuser,async (req,res)=>{
   res.status(500).send("some error occured")
 }
 })
+
+module.exports=router

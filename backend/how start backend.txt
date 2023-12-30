@@ -24,3 +24,5 @@ for authentication of the data we can download express validator by using npm in
 then wwe can download npm i bcryptjs for securing password because if save password in database without using it if the database is hacked then the hacker gets the password  but if we use bycrypt hashed value of password is stored in database
 
 then install npm i jsonwebtoken
+
+consurrently npm package serach on web to run front end and backend at the same time
